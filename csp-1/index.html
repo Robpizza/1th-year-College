@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>CSP Flexbox</title>
+
+        <style>
+            body {
+                font-family: Verdana;
+                background: rgba(0, 0, 0, 0.5) url("679478.jpg") no-repeat fixed center;
+                background-size: cover;
+            }
+            header, #container, nav, .cnt, .sidebar, footer {
+                border: 1px solid gray;
+                border-radius: 5px;
+                margin: 5px 0;
+                padding: 10px;
+                background: rgba(255, 255, 255, 0.8);
+            }
+            header {
+                font-size: 200%;
+            }
+            #container {
+                display: flex;
+            }
+            .cnt {
+                flex: 5 0 0;
+                align-items: left;
+                margin: 0 2px;
+            }
+            .sidebar {
+                flex: 2 0 0;
+                align-items: right;
+                margin: 0 2px;
+            }
+            nav {
+                font-size: 90%;
+            }
+            nav ul {
+                display: flex;
+                list-style-type: none;
+                padding: 0;
+            }
+            nav ul li {
+                margin-right: 5px;
+                width: 100px;
+            //padding: 5px;
+            }
+            nav ul li a {
+                text-decoration: none;
+                color: #ffffff;
+                text-align: center;
+                background: #666666;
+                display: block;
+                width: 100%;
+            }
+            nav li ul {
+                flex-flow: column;
+            }
+            nav li ul li {
+                height: 0;
+                -webkit-transition: height 2s;
+                -moz-transition: height 2s;
+                -ms-transition: height 2s;
+                -o-transition: height 2s;
+                transition: height 2s;
+            }
+            nav li:hover ul li {
+                height: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <dialog>
+            <div>
+                HEADER
+            </div>
+            <div>
+                CONTENT
+            </div>
+            <div>
+                FOOTER
+            </div>
+        </dialog>
+
+        <header>
+            Header
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="#">item 1</a></li>
+                <li><a href="#">item 2</a>
+                    <ul>
+                        <li><a href="#">item 2.1</a></li>
+                        <li><a href="#">item 2.2</a></li>
+                        <li><a href="#">item 2.3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">item 3</a></li>
+            </ul>
+        </nav>
+
+        <div id="container">
+            <article class="cnt">
+                <p>Article</p>
+            </article>
+            <article class="sidebar">
+                <p>Sidebar</p>
+            </article>
+        </div>
+
+        <footer>footer</footer>
+
+    </body>
+</html>
