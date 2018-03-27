@@ -1,24 +1,26 @@
 <?php
-
+require 'database.php';
 class mvc {
 
     private $controller;
     private $action;
     private $controllerObject;
     private $method;
+    private $database = null;
 
     public function __construct() {
         $this->controller = ucfirst($_GET['controller']);
         $this->action = ucfirst($_GET['action']);
-        $this->method = 'get' . ucfirst($_GET['action']);
+        $this->method = ucfirst($_GET['action']);
+        $this->database = new database();
 
         if(is_file('../framework/controller/' . $_GET['controller'] . '.php')) {
             include '../framework/controller/' . $_GET['controller'] . '.php';
         } else {
-            die("Controller does not exist!");
+            echo "Error: Controller [" . $_GET['controller'] . "] does not exist!";
+            die(0);
         }
-
-        //$this->controllerObject = new $this->controller();
+        $this->controllerObject = new $this->controller($this->database);
     }
 
     /**
@@ -36,14 +38,13 @@ class mvc {
     }
 
     public function getFeedback() {
-        $controller = $this->controllerObject;
-        $method = $this->method;
-
-        if(method_exists($this->controllerObject, $this->action)) {
-            die("Controller exist!");
+        if(method_exists($this->controllerObject, $this->method)) {
+            $controller = $this->controllerObject;
+            $method = $this->method;
+            return $controller->$method();
         } else {
-            die("Controller does not exist!");
+            die("Action [" . $this->method . "] does not exist!");
         }
-        return $controller->$method();
+        //return $controller->$method();
     }
 }

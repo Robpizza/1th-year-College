@@ -1,0 +1,35 @@
+nav {
+    font-size: 90%;
+}
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+nav ul li {
+    margin-right: 5px;
+    width: 100px;
+//padding: 5px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    text-align: center;
+    background: #666666;
+    display: block;
+    width: 100%;
+}
+nav li ul {
+    flex-flow: column;
+}
+nav li ul li {
+    height: 0;
+    -webkit-transition: height 2s;
+    -moz-transition: height 2s;
+    -ms-transition: height 2s;
+    -o-transition: height 2s;
+    transition: height 2s;
+}
+nav li:hover ul li {
+    height: 20px;
+}

@@ -6,10 +6,29 @@
 
         <link rel="stylesheet" href="resources/css/main.css" />
         <link rel="stylesheet" href="resources/css/navigation.css" />
+        <link rel="stylesheet" href="resources/css/dialogbox.css" />
+
+        <script type="application/javascript" src="resources/js/dialogbox.js"></script>
 
     </head>
 
     <body>
+
+        <div class="dialog" id="myBox">
+            <div class="dialog-content">
+                <div>
+                    <span class="close">&times;</span>
+                    <h2>Header</h2>
+                </div>
+                <div>
+                    <p>Content</p>
+                    <p>Some other text...</p>
+                </div>
+                <div>
+                    <h3>This is the footer</h3>
+                </div>
+            </div>
+        </div>
 
         <header>
             Header
@@ -17,7 +36,7 @@
 
         <nav>
             <ul>
-                <li><a href="#">item 1</a></li>
+                <li><a href="#" id="trigger">item 1</a></li>
                 <li><a href="#">item 2</a>
                     <ul>
                         <li><a href="#">item 2.1</a></li>

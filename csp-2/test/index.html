@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>html</title>
+        <style>
+            #test {
+                border:1px solid gray;
+                padding:10px;
+            }
+
+            table {
+                border-collapse:collapse;
+            }
+
+            table td {
+                border:1px solid gray;
+                padding:5px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h2>Dynamische opbouw tabel met Javascript</h2>
+        <div id="test"></div>
+        <button onclick="fVulSimpel()">1 rij</button><br>
+        <button onclick="fVulArray()">vanuit array</button><br>
+        <button onclick="fVulMeerDimArray()">meer dim. array</button><br>
+    </body>
+    <script>
+        function fVulSimpel() {
+            //var html = "<table><tr><td>cel1234</td><td>cel2</td></tr></table>"
+            //document.getElementById("test").innerHTML = html;
+            var td1 = document.createElement("td");
+            td1.innerHTML ="cel1";
+            var td2 = document.createElement("td");
+            td2.innerHTML ="cel2";
+
+            var tr = document.createElement("tr");
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+
+            var table = document.createElement("table");
+            table.appendChild(tr);
+
+            document.getElementById("test").appendChild(table);
+
+        }
+
+        function fVulArray() {
+            var arr = ["Rob", "", "Hutten", "17"];
+            console.log(arr);
+            var table = document.createElement("table");
+
+            var tr = document.createElement("tr");
+            for( var i=0; i<arr.length; i++) {
+                var td = document.createElement("td");
+                td.innerHTML = arr[i];
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+            document.getElementById("test").appendChild(table);
+        }
+
+        function fVulMeerDimArray() {
+            var arr = [
+                ["cel1.1", "cel1.2", "cel1.3"],
+                ["cel2.1", "cel2.2", "cel2.3"],
+                ["cel3.1", "cel3.2", "cel3.3"],
+            ];
+            //console.log(arr);
+            var table = document.createElement("table");
+
+            //Get the row
+            for(var row = 0; row < arr.length; row++) {
+                var tr = document.createElement("tr");
+
+                for(var cel = 0; cel < arr[row].length; cel++) {
+                    var td = document.createElement("td");
+                    console.log(arr[row][cel]);
+                    td.innerHTML = arr[row][cel];
+                    tr.appendChild(td);
+                }
+                table.appendChild(tr);
+            }
+            document.getElementById("test").appendChild(table);
+        }
+    </script>
+</html>

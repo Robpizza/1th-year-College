@@ -1,0 +1,28 @@
+body {
+    font-family: Verdana;
+    background: rgba(0, 0, 0, 0.5) url("../../679478.jpg") no-repeat fixed center;
+    background-size: cover;
+}
+header, #container, nav, .cnt, .sidebar, footer {
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin: 5px 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8);
+}
+header {
+    font-size: 200%;
+}
+#container {
+    display: flex;
+}
+.cnt {
+    flex: 5 0 0;
+    align-items: left;
+    margin: 0 2px;
+}
+.sidebar {
+    flex: 2 0 0;
+    align-items: right;
+    margin: 0 2px;
+}
