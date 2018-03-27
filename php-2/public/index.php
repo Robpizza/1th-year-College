@@ -6,7 +6,9 @@ $mvc = new mvc();
 <html>
     <head>
         <title>Php</title>
-        <link rel="stylesheet" href="css.css"/>
+        <link rel="stylesheet" href="public/main.css" />
+        <link rel="stylesheet" href="public/crud_table.css" />
+        <link rel="stylesheet" href="public/crud_form.css" />
     </head>
 
     <?php

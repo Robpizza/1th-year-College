@@ -9,7 +9,7 @@ class crud {
     }
 
 
-    
+
     /*
      *  CREATE function
      *  Creates a new page in the database.
@@ -18,12 +18,15 @@ class crud {
         //  Check if the form is send or not
         //  If not generate a form and return.
         if(!isset($_POST['send'])) {
-          $form =  '<form method="post">';
-          $form .= '<input type="text" name="name" placeholder="name">';
-          $form .= '<input type="text" name="content" placeholder="content">';
-          $form .= '<input type="submit" name="send" value="send">';
-          $form .= '</form>';
-          return $form;
+            $form =  '<div class="container">';
+            $form .= '<form method="post" class="crud_form">';
+            $form .= '<input type="text" name="name" placeholder="name">';
+            $form .= '<textarea name="content" placeholder="content"></textarea>';
+            $form .= '<input type="submit" name="send" value="send">';
+            $form .= '<a href="?controller=crud&action=read">Cancel</a>';
+            $form .= '</form>';
+            $form .= '</div>';
+            return $form;
 
         } else {
             $name = $_POST['name'];
@@ -86,10 +89,11 @@ class crud {
         //If there is an ID specified in the URL
         if(isset($_GET['id'])) {
             if(!isset($_POST['send'])) {
-                $form =  '<form method="post">';
+                $form =  '<form method="post" class="crud_form">';
                 $form .= '<input type="text" name="name" placeholder="New name">';
-                $form .= '<input type="text" name="content" placeholder="New content">';
+                $form .= '<textarea name="content" placeholder="New content"></textarea>';
                 $form .= '<input type="submit" name="send" value="send">';
+                $form .= '<a href="?controller=crud&action=read">Cancel</a>';
                 $form .= '</form>';
                 return $form;
             } else {
