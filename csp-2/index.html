@@ -12,9 +12,8 @@ Sylesheets staan in resources/css
         <link rel="stylesheet" href="resources/css/navigation.css" />
         <link rel="stylesheet" href="resources/css/dialogbox.css" />
 
-        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
         <script type="application/javascript" src="resources/js/dialogbox.js"></script>
-        <script type="application/javascript" src="resources/js/bierApi.js"></script>
+        <script type="application/javascript" src="resources/js/api.js"></script>
 
     </head>
 
@@ -42,8 +41,8 @@ Sylesheets staan in resources/css
 
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Info</a>
+                <li><a href="#" onclick="getJson(0)">Home</a></li>
+                <li><a href="#" onclick="getJson(1) ">Over</a>
                     <ul>
                         <li><a href="#">Site</a></li>
                         <li><a href="#">Over mij</a></li>
@@ -57,10 +56,11 @@ Sylesheets staan in resources/css
 
         <div id="container">
             <article class="cnt">
-                <h2 class="title">Article</h2>
-                <p>Article content</p>
+                <h2 class="title" id="api_title">Article</h2>
+                <p id="api_content">Article content</p>
 
-                <div id="bier"></div>
+
+                <div id="api_table"></div>
 
 
             </article>
@@ -71,10 +71,9 @@ Sylesheets staan in resources/css
             </article>
         </div>
 
-        <footer>RobHutten &copy; 2001 - 2018</footer>
 
-        <script>
-            getBierTabel();
-        </script>
+
+
+        <footer>RobHutten &copy; 2001 - 2018</footer>
     </body>
 </html>
