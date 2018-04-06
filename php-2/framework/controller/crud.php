@@ -34,7 +34,7 @@ class crud {
 
             //Check if the query succeeded if so return TRUE else return the error.
             if($this->database->executeUpdate("INSERT INTO `page`(`page_id`, `page_name`, `page_content`) VALUES (DEFAULT, '$name', '$content')")) {
-                header('Location: ?controller=crud&amp;action=read');
+                header('Location: ?controller=crud&action=read');
                 return true;
             } else {
                 return $this->database->getErrorMessage();
@@ -88,18 +88,23 @@ class crud {
     public function update() {
         //If there is an ID specified in the URL
         if(isset($_GET['id'])) {
+            $id = $_GET['id'];
+
             if(!isset($_POST['send'])) {
+
+                $results = $this->database->executeQuery("SELECT page_name, page_content FROM page WHERE page_id=" . $id);
+                array_shift($results);
+                $name = $results[0]['page_name'];
+                $content = $results[0]['page_content'];
+
                 $form =  '<form method="post" class="crud_form">';
-                $form .= '<input type="text" name="name" placeholder="New name">';
-                $form .= '<textarea name="content" placeholder="New content"></textarea>';
+                $form .= '<input type="text" name="name" placeholder="New name" value="' . $name . '">';
+                $form .= '<textarea name="content" placeholder="New content">' . $content . '</textarea>';
                 $form .= '<input type="submit" name="send" value="send">';
                 $form .= '<a href="?controller=crud&action=read">Cancel</a>';
                 $form .= '</form>';
                 return $form;
             } else {
-                $id = $_GET['id'];
-                $name = $_POST['name'];
-                $content = $_POST['content'];
 
                 //Check if the query succeeded if so return TRUE else return the error.
                 if($this->database->executeUpdate("UPDATE `page` SET `page_name`='$name',`page_content`='$content' WHERE page_id=$id")) {

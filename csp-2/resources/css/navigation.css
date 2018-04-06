@@ -42,6 +42,7 @@ nav li ul li {
     -o-transition: height 2s;
     transition: height 2s;
 }
+
 nav li:hover ul li {
     height: 20px;
 }

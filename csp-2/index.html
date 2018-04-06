@@ -8,7 +8,9 @@
         <link rel="stylesheet" href="resources/css/navigation.css" />
         <link rel="stylesheet" href="resources/css/dialogbox.css" />
 
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
         <script type="application/javascript" src="resources/js/dialogbox.js"></script>
+        <script type="application/javascript" src="resources/js/bierApi.js"></script>
 
     </head>
 
@@ -36,28 +38,39 @@
 
         <nav>
             <ul>
-                <li><a href="#" id="trigger">item 1</a></li>
-                <li><a href="#">item 2</a>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Info</a>
                     <ul>
-                        <li><a href="#">item 2.1</a></li>
-                        <li><a href="#">item 2.2</a></li>
-                        <li><a href="#">item 2.3</a></li>
+                        <li><a href="#">Site</a></li>
+                        <li><a href="#">Over mij</a></li>
+                        <li><a href="#">Broodje kaas</a></li>
                     </ul>
                 </li>
-                <li><a href="#">item 3</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#" id="trigger">DialogBox</a></li>
             </ul>
         </nav>
 
         <div id="container">
             <article class="cnt">
-                <p>Article</p>
+                <h2 class="title">Article</h2>
+                <p>Article content</p>
+
+                <div id="bier"></div>
+
+
             </article>
+
             <article class="sidebar">
-                <p>Sidebar</p>
+                <h2 class="title">Sidebar</h2>
+                <p>Sidebar content</p>
             </article>
         </div>
 
-        <footer>footer</footer>
+        <footer>RobHutten &copy; 2001 - 2018</footer>
 
+        <script>
+            getBierTabel();
+        </script>
     </body>
 </html>

@@ -10,8 +10,8 @@ class page {
 
     public function getAllPages() {
         header('Content-Type: application/json');
-        $result = $this->database->executeQuery("SELECT * FROM page");
-        print_r(json_encode($result));
+        $result = $this->database->executeQuery("SELECT * FROM pajge");
+        return json_encode($result);
     }
 
     public function getShow() {

@@ -55,20 +55,36 @@ class mvc {
         if (method_exists($this->controllerObject, $this->method)) {
             $controller = $this->controllerObject;
             $method = $this->method;
-
-            if (strpos($method, "All") !== false) {
-                echo $controller->$method();
-                die();
-            }
-
             return $controller->$method();
         } else {
             die("Action [" . $this->method . "] does not exist!");
         }
     }
 
+    public function generateHTML() {
+        if($this->controller == "Api") {
+            die($this->getFeedback());
+        } else {
+            $out = '<!DOCTYPE html>' . PHP_EOL;
+            $out .= '<html>' . PHP_EOL;
+            $out .= '<head>' . PHP_EOL;
+            $out .= '<title>Php</title>' . PHP_EOL;
+            $out .= '<link rel="stylesheet" href="public/css/main.css" />' . PHP_EOL;
+            $out .= '<link rel="stylesheet" href="public/css/crud_table.css" />' . PHP_EOL;
+            $out .= '<link rel="stylesheet" href="public/css/crud_form.css" />' . PHP_EOL;
+            $out .= '</head>' . PHP_EOL;
+            $out .= '<body>' . PHP_EOL;
+            $out .= $this->getMenu() . PHP_EOL;
+            $out .= $this->getFeedback() . PHP_EOL;
+            $out .= '</body>' . PHP_EOL;
+            $out .= '</html>' . PHP_EOL;
+        }
+        return $out;
+    }
+
     public function getMenu() {
         $menu = new menu($this->database);
         return $menu->getNavBar();
     }
+
 }
