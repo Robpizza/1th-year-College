@@ -11,9 +11,12 @@ Sylesheets staan in resources/css
         <link rel="stylesheet" href="resources/css/main.css" />
         <link rel="stylesheet" href="resources/css/navigation.css" />
         <link rel="stylesheet" href="resources/css/dialogbox.css" />
+        <link rel="stylesheet" href="resources/css/bier_table.css" />
 
+        <script type="application/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
         <script type="application/javascript" src="resources/js/dialogbox.js"></script>
         <script type="application/javascript" src="resources/js/api.js"></script>
+        <script type="application/javascript" src="resources/js/bierApi.js"></script>
 
     </head>
 
@@ -46,11 +49,12 @@ Sylesheets staan in resources/css
                     <ul>
                         <li><a href="#">Site</a></li>
                         <li><a href="#">Over mij</a></li>
-                        <li><a href="#">Broodje kaas</a></li>
+                        <li><a href="#">Broodje Kaas</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Contact</a></li>
                 <li><a href="#" id="trigger">DialogBox</a></li>
+                <li><a href="#" onclick="getBierTabel()">Bier Tabel</a></li>
             </ul>
         </nav>
 

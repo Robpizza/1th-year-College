@@ -89,6 +89,9 @@ class crud {
         //If there is an ID specified in the URL
         if(isset($_GET['id'])) {
             $id = $_GET['id'];
+            $name = "";
+            $content = "";
+
 
             if(!isset($_POST['send'])) {
 
@@ -105,7 +108,8 @@ class crud {
                 $form .= '</form>';
                 return $form;
             } else {
-
+                $name = $_POST['name'];
+                $content = $_POST['content'];
                 //Check if the query succeeded if so return TRUE else return the error.
                 if($this->database->executeUpdate("UPDATE `page` SET `page_name`='$name',`page_content`='$content' WHERE page_id=$id")) {
                     header('Location: ?controller=crud&action=read');

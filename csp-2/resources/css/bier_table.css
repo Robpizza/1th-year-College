@@ -1,0 +1,22 @@
+table.tblA {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+}
+
+.tblA th, tblA td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.tblA tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tblA th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #ff4707;
+    color: white;
+}

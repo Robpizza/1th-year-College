@@ -1,6 +1,8 @@
 <?php
 require '../framework/core/mvc.php';
-$mvc = new mvc();
+require '../framework/core/database.php';
+
+$mvc = new mvc(new database());
 
 echo $mvc->generateHTML();
 
