@@ -1,0 +1,10 @@
+DirectoryIndex /public/index.php
+
+RewriteEngine On
+
+RewriteRule ^login /public/login.php [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^/?([a-zA-Z_]+)$ /public/index.php?page=$1 [L,QSA]
+RewriteRule ^/?([a-zA-Z_]+)/([a-zA-Z_0-9]+)$ /public/index.php?page=$1&user=$2 [L]
