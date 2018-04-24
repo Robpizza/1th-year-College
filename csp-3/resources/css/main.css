@@ -1,0 +1,62 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    height: 100vh;
+}
+
+body {
+    font-family: Verdana;
+    background: rgba(0, 0, 0, 0.5) url("../background.jpg") no-repeat fixed center;
+    background-size: cover;
+}
+
+header, #container, nav, .cnt, .sidebar, footer {
+    padding: 10px;
+    background: rgba(203, 203, 203, 0.8);
+}
+
+.cnt, .sidebar {
+    background: #FFF;
+}
+.cnt h2, .sidebar h2 {
+    margin: 0 5px 5px 0;
+}
+
+header {
+    font-size: 200%;
+}
+#container {
+    display: flex;
+    min-height: 77.5%;
+}
+
+.cnt {
+    flex: 5 0 0;
+    align-items: left;
+    margin: 0 2px;overflow:hidden;
+    height:1%;
+}
+.sidebar {
+    flex: 1 0 0;
+    align-items: right;
+    margin: 0 2px;
+    height: 25vh;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+
+    border-top: 1px solid gray;
+    font-weight: bold;
+
+    height: auto;
+
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}

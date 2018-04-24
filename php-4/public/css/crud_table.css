@@ -1,0 +1,15 @@
+table.read {
+    border-collapse: collapse;
+    width: 50%;
+    margin: auto;
+    font-size: 12px;
+}
+
+table.read th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+table.read tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

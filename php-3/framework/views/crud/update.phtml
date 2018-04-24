@@ -1,0 +1,6 @@
+<form method="post" class="crud_form">
+    <input type="text" name="name" placeholder="New name" value="<?php echo $controller->output['page_name'] ?>">
+    <textarea name="content" placeholder="New content"><?php echo $controller->output['page_content'] ?></textarea>
+    <input type="submit" name="send" value="send">
+    <a href="?controller=crud&action=read">Cancel</a>
+</form>

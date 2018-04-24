@@ -1,0 +1,41 @@
+form.crud_form {
+    width: 40%;
+    margin: auto;
+}
+
+.crud_form input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.crud_form input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 70%;
+    font-size: 12px;
+}
+.crud_form a {
+    background-color: #ff5200;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 20%;
+    font-size: 12px;
+    float: right;
+    text-decoration: none;
+}
+
+.crud_form input[type=submit]:hover {
+    background-color: #45a049;
+}

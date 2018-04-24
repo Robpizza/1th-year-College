@@ -92,7 +92,6 @@ class crud {
             $name = "";
             $content = "";
 
-
             if(!isset($_POST['send'])) {
 
                 $results = $this->database->executeQuery("SELECT page_name, page_content FROM page WHERE page_id=" . $id);
